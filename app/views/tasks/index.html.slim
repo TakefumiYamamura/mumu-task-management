@@ -1,10 +1,23 @@
+.task-pane-header
+  .task-header
+    h3 現在あなたの抱えているタスク
+    .card-container.list-card-border
+      h5 Tech::Chatでmarkdownの記法を用いてコードをかけるようにする
+      .list-card-date
+        i.fa.fa-calendar-o.fa-fw 12/23
+
+  .nav
+    ul.task-nav-item
+      li.tab-item.task-nav-item-button.selected 作業中
+      li.tab-item.task-nav-item-button ToDo
+      li.tab-item.task-nav-item-button 完了
 .task-content
   .list-card-title
     i.fa.fa-table.title-image
     h5.underline tech::master
   - 20.times do |i|
-    .list-card-container.btn-default
+    .list-card-container.btn-default.list-card-border
       h5 Tech::Chatでmarkdownの記法を用いてコードをかけるようにする
       i.fa.fa-user.fa-fw
-        .list-card-members
+        .list-card-date
           i.fa.fa-calendar-o.fa-fw 12/23
