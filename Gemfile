@@ -54,4 +54,5 @@ gem 'html2slim'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-turbolinks'
-
+gem 'dotenv-rails'
+gem 'ruby-trello'
