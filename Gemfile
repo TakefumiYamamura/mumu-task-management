@@ -45,3 +45,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'slim-rails'
+gem 'carrierwave'
+gem 'font-awesome-rails'
+gem 'better_errors'
+gem 'pry-rails'
