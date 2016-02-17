@@ -1,11 +1,27 @@
 .navbar-fixed-top {
   position: fixed;
-  color: #fff;
-  opacity: 0.6;
+  background-color: #026aa7;
+  padding: 5px;
+
+  .nav-list {
+    background-color: rgba(255,255,255,.3);
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+    a {
+      color: white;
+    }
+    a:hover {
+      background-color: rgba(255,255,255,.2);
+      color: white;
+      border-radius: 5px;
+      border: none;
+    }
+  }
 }
 
 .contents {
-  padding: 50px 0 0 0;
+  padding: 71px 0 0 0;
 }
 
 .task-content {
