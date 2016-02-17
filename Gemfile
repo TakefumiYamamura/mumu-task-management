@@ -47,8 +47,9 @@ end
 
 gem 'slim-rails'
 gem 'carrierwave'
-gem 'font-awesome-rails'
 gem 'better_errors'
 gem 'pry-rails'
 gem 'devise'
 gem 'html2slim'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
