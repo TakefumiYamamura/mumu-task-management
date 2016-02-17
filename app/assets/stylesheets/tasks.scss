@@ -1,3 +1,30 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.list-card-title {
+  border-bottom: 1px #ccc solid;
+  padding: 8px 0;
+  margin: 0 0 4px 38px;
+  position: relative;
+}
+
+.title-image {
+  position: absolute;
+  left: -25px;
+  top: 20px;
+  font-size: 20px;
+}
+
+.list-card-container {
+  border: 1px #ccc solid;
+  border-radius: 4px;
+  width: 32%;
+  height: 100px;
+  float: left;
+  padding: 10px;
+  margin: 2px;
+  position: relative;
+}
+
+.list-card-members {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+}

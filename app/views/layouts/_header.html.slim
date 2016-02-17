@@ -1,0 +1,19 @@
+.navbar.main_header.navbar-fixed-top.navbar-default role="navigation"
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="/" target="_self"
+        img src="/images/commons/logo.png"
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+          - if user_signed_in?
+            = render "layouts/navigation/shift"
+          - else
+            li
+              = link_to '新規登録', new_user_registration_path, target: '_self'
+            li
+              = link_to 'ログイン', new_user_session_path, target: '_self'
