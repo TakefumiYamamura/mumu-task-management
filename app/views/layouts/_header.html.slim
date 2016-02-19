@@ -11,7 +11,8 @@
     #navbar.navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
           - if user_signed_in?
-            = render "layouts/navigation/shift"
+            li.nav-list
+              = link_to 'ログアウト', destroy_user_session_path, target: '_self'
           - else
             li.nav-list
               = link_to '新規登録', new_user_registration_path, target: '_self'
