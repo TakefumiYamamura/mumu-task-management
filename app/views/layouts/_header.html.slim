@@ -14,7 +14,7 @@
             li.nav-list
               = link_to '新規タスク作成', new_task_path, remote: true
             li.nav-list
-              = link_to 'ログアウト', destroy_user_session_path, target: '_self'
+              = link_to 'ログアウト', destroy_user_session_path, target: '_self', method: 'delete'
           - else
             li.nav-list
               = link_to '新規登録', new_user_registration_path, target: '_self'
