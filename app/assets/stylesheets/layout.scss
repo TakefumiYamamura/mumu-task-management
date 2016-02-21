@@ -1,5 +1,13 @@
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  font-weight: 100;
+}
 
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
 
 .navbar-fixed-top {
   position: fixed;
@@ -66,3 +74,12 @@ html, body { height: 100%; }
   margin-top: 20px;
 }
 
+.cover-view {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #e2e4e4;
+  opacity: 0.5;
+  position: fixed;
+}

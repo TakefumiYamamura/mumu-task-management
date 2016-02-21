@@ -71,3 +71,66 @@
     text-decoration: none;
   }
 }
+
+.new-task-content{
+  position: absolute;
+  width: 600px;
+  left: calc(50% - 300px);
+  top: calc(20%);
+
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 8px;
+  .task-form-header > h2 {
+    font-size: 20px;
+    padding: 0 20px;
+    margin: 20px 0;
+  }
+}
+
+.standardForm {
+  background-color: #fff;
+  border-radius: 6px;
+  margin-bottom: 0;
+  width: auto;
+}
+
+.task-form-content{
+  border-top: 1px solid #eee;
+  & > h3 {
+    float:left;
+    width: 130px;
+    color: #555;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0px 20px;
+  }
+  & > input {
+    margin: 15px 20px;
+    float: right;
+    width: 400px;
+    border-radius: 6px;
+    border: 1px solid #d6d3ce;
+  }
+  & > textarea {
+    margin: 15px 20px;
+    float: right;
+    width: 400px;
+    height: 85px;
+    border-radius: 6px;
+    border: 1px solid #d6d3ce;
+  }
+  & > select {
+    margin: 15px 20px;
+    float: right;
+    width: 400px;
+    border-radius: 6px;
+    border: 1px solid #d6d3ce;
+  }
+}
+
+
+.task-form-control{
+
+}
