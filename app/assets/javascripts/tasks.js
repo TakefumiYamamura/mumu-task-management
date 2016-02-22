@@ -5,4 +5,13 @@ $(window).on("load", function() {
     $(".task-content").hide();
     $("." + this.id).show();
   });
+  $("body").on("click", ".edit-task", function() {
+    var type = this.id;
+    $(".edit-task").show();
+    $(".task-form-control").addClass("hidden-form")
+    $(".hide-" + type).hide();
+    $(".task-form-" + type).removeClass("hidden-form")
+    $(".content-" + type).append("<input type='submit' value='Save' class='btn btn-primary task-form-control'>");
+  });
+
 });

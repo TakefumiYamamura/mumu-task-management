@@ -35,8 +35,8 @@
 
 .list-card-date {
   position: absolute;
-  bottom: 20px;
-  right: 50px;
+  bottom:10px;
+  right: 10px;
 }
 
 .task-pane-header {
@@ -77,14 +77,96 @@
   width: 600px;
   left: calc(50% - 300px);
   top: calc(20%);
-
   border: 1px solid #eee;
   background: #fff;
   border-radius: 8px;
-  .task-form-header > h2 {
-    font-size: 20px;
+
+  .task-form-header{
+    padding: 0 20px 20px;
+    h2 {
+      font-size: 20px;
+      margin: 20px 0 0;
+    }
+  }
+
+  .task-form-content{
+    border-top: 1px solid #eee;
+    h2#title {
+      cursor: pointer;
+      float: left;
+      width: 120px;
+    }
+    h3 {
+      color: #555;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 0px 20px;
+      float: left;
+      width: 120px;
+    }
+    input, select, textarea {
+      margin: 15px 20px;
+      width: 400px;
+      border-radius: 6px;
+      border: 1px solid #d6d3ce;
+    }
+    textarea {
+      padding-bottom: 0;
+      height: 85px;
+    }
+    .new-task-button{
+      width: 70px;
+    }
+  }
+}
+
+.edit-task-content{
+  position: absolute;
+  width: 600px;
+  left: calc(50% - 300px);
+  top: calc(20%);
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 8px;
+
+  .task-form-header{
+    padding: 0 20px 20px;
+    h2 {
+      font-size: 20px;
+      margin: 20px 0 0;
+    }
+    input.task-form-title {
+      font-size: 20px;
+      margin: 15px 0px;
+      width: 560px;
+      height: 35px;
+      border-radius: 6px;
+      border: 1px solid #d6d3ce;
+    }
+  }
+  .task-form-content{
     padding: 0 20px;
-    margin: 20px 0;
+    h2#title {
+      cursor: pointer;
+    }
+    h3 {
+      color: #555;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    input {
+      // margin: 15px 0;
+      border-radius: 6px;
+      border: 1px solid #d6d3ce;
+    }
+
+    select {
+      margin: 15px 20px;
+      float: right;
+      width: 400px;
+      border-radius: 6px;
+      border: 1px solid #d6d3ce;
+    }
   }
 }
 
@@ -95,39 +177,25 @@
   width: auto;
 }
 
-.task-form-content{
-  border-top: 1px solid #eee;
-  & > h3 {
-    float:left;
-    width: 130px;
+
+.content-detail {
+  h4 {
     color: #555;
-    float: left;
     font-size: 13px;
-    font-weight: bold;
-    padding: 0px 20px;
   }
-  & > input {
-    margin: 15px 20px;
-    float: right;
-    width: 400px;
-    border-radius: 6px;
-    border: 1px solid #d6d3ce;
+  h6.detail {
+    span {
+      text-decoration: underline;
+    }
   }
-  & > textarea {
-    margin: 15px 20px;
-    float: right;
-    width: 400px;
+  textarea {
+    padding-bottom: 0;
+    width: 560px;
     height: 85px;
     border-radius: 6px;
     border: 1px solid #d6d3ce;
   }
-  & > select {
-    margin: 15px 20px;
-    float: right;
-    width: 400px;
-    border-radius: 6px;
-    border: 1px solid #d6d3ce;
-  }
+
 }
 
 
