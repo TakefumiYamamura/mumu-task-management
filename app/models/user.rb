@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  has_many :tasks_users
+  has_many :tasks, through: :tasks_users
+
 end
