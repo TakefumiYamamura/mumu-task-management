@@ -198,7 +198,36 @@
 
 }
 
-
-.task-form-control{
-
+.member-avatar {
+  width: 30px;
+  height: 30px;
 }
+
+.plus-image{
+  margin-left: 5px;
+  input[type=checkbox] {
+    display: none;
+    margin: 0;
+  }
+}
+
+.member-content {
+  display: none;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 8px;
+  a.member-link {
+    position: relative;
+    img.check-img {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      width: 15px;
+      height: 15px;
+      border-radius: 2px;
+    }
+  }
+}
+
