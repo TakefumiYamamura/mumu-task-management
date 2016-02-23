@@ -30,20 +30,6 @@
                 - else
                   = image_tag "no_avatar.png", class: "member-avatar"
 
-          / = collection_check_boxes(:task, :user_ids, User.all, :id, :avatar) do |b|
-          /   - binding.pry
-          /   - if b.text.present?
-          /     = b.label
-          /       = b.check_box data: {remote: true, url: tasks_users_path(user_id: b, task_id: task), method: "POST"}
-          /       / :data => {:remote => true, :url => url_for( :action => 'complete', :id => task.id, :complete => task.complete ), :method => :put}
-          /       = image_tag b.text, class: "member-avatar"
-          /       = image_tag "check.png", class: "check-img"
-          /   - else
-          /     = b.label
-          /       = b.check_box
-          /       = image_tag "no_avatar.png", class: "member-avatar"
-          /       = image_tag "check.png", class: "check-img"
-
       .task-form-content.clearfix.content-detail
         h6.detail
           |detail

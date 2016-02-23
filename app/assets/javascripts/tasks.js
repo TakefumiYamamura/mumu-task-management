@@ -13,5 +13,9 @@ $(window).on("load", function() {
     $(".task-form-" + type).removeClass("hidden-form")
     $(".content-" + type).append("<input type='submit' value='Save' class='btn btn-primary task-form-control'>");
   });
+  $("body").on("click", ".plus-image", function() {
+    var type = this.id;
+    $(".member-content").show();
+  });
 
 });

@@ -2,7 +2,7 @@
   .standardForm
     .task-form-header
       h2 新規タスクを作成
-    = form_for Task.new do |f|
+    = form_for Task.new, data: {remote:true} do |f|
       .task-form-content.clearfix
         h3 タイトル
         = f.text_field :title, class: "task-form-control"
@@ -16,6 +16,4 @@
         h3 カテゴリ
         = f.select :category, Task.categories.keys.to_a, class: "task-form-control"
       .task-form-content.clearfix
-        h3 カテゴリ
-      .task-form-content.clearfix
-        = f.submit "作成"
+        = f.submit "作成", class: "btn btn-primary pull-left new-task-button"
