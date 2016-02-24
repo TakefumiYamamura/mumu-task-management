@@ -17,5 +17,13 @@ $(window).on("load", function() {
     var type = this.id;
     $(".member-content").show();
   });
+  $(".task-content").masonry({
+        itemSelector : '.list-card-container',
+        columnWidth : 260,
+        isAnimated : true,
+        animationOptions: {
+            duration: 600
+        }
+    });
 
 });
