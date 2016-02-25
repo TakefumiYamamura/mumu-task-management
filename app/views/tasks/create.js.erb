@@ -1,2 +1,3 @@
 $("#wrap").removeClass('cover-view');
 $(".new-task-content").hide()
+update_tasks('<%= j(render partial: "tasks/task_content", locals: {tasks: @tasks} )%>')
