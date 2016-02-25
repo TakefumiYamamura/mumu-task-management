@@ -10,29 +10,7 @@
   .nav
     ul.task-nav-item
       li#doing.tab-item.task-nav-item-button.selected 作業中
-      li#todos.tab-item.task-nav-item-button ToDo
-      li#archive.tab-item.task-nav-item-button 完了
-.task-content.doing.clearfix
-  .list-card-title
-    i.fa.fa-table.title-image
-    h5.underline tech::master
-  - @tasks.each do |task|
-    = link_to (edit_task_path task), remote: true do
-      .list-card-container.btn-default.list-card-border
-        h5
-          = task.title
-        h6
-          = task.detail
-        - task.users.each do |user|
-          - if user.avatar.present?
-            = image_tag user.avatar, class: "member-avatar"
-          - else
-            = image_tag "no_avatar.png", class: "member-avatar"
-        .list-card-date
-          i.fa.fa-calendar-o.fa-fw
-          = task.deadline
-.task-content.todos
-  p todos
-.task-content.archive
-  p archive
-
+      li#todo.tab-item.task-nav-item-button ToDo
+      li#done.tab-item.task-nav-item-button 完了
+.task-content-wrap
+  = render partial: "tasks/task_content", locals: {tasks: @tasks}

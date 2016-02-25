@@ -44,16 +44,9 @@
         .edit-task#deadline.btn-danger.btn.hide-deadline
           = task.deadline
         = f.date_field :deadline, class: "task-form-control task-form-deadline hidden-form"
-      .task-form-content.clearfix
-        h3.edit-task#category
-          label
-            = f.radio_button :category, 0, :onclick => "this.form.submit();,"
-            | doing
-          label
-            = f.radio_button :category, 1
-            | todo
-          label
-            = f.radio_button :category, 2
-            | done
-        = f.select :category, Task.categories.keys.to_a, class: "task-form-control"
-
+      .task-form-content.clearfix.content-category
+        h6.category
+          |State
+        .edit-task#category.btn.hide-category.btn-primary
+          = task.category
+        = f.select :category, Task.categories.keys.to_a, {}, {class: "task-form-control task-form-category hidden-form"}
