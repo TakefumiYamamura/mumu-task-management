@@ -1,7 +1,8 @@
 class TasksUsersController < ApplicationController
-  before_action :set_task, only: [:create]
+  before_action :set_tasks, only: [:create, :destroy]
 
   def create
+    @task = Task.find(params[:task_id])
     TasksUser.create(task_user_params)
   end
 
@@ -17,8 +18,8 @@ class TasksUsersController < ApplicationController
     params.permit(:user_id, :task_id)
   end
 
-  def set_task
-    @task = Task.find(params[:task_id])
+  def set_tasks
+    @tasks = Task.includes(:users).all
   end
 
 end
