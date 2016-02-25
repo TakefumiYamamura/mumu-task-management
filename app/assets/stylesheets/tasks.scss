@@ -80,6 +80,11 @@
   background: #fff;
   border-radius: 8px;
 
+  .task-error-explanation{
+    padding: 0 20px 20px;
+    border-top: 1px solid #eee;
+  }
+
   .task-form-header{
     padding: 0 20px 20px;
     h2 {

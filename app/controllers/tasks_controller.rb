@@ -5,10 +5,12 @@ class TasksController < ApplicationController
   end
 
   def new
+    @task = Task.new
   end
 
   def create
-    Task.create(task_params)
+    @task = Task.new(task_params)
+    @flag = @task.save ? true : false
   end
 
   def edit

@@ -2,7 +2,15 @@
   .standardForm
     .task-form-header
       h2 新規タスクを作成
-    = form_for Task.new, data: {remote:true} do |f|
+    - if task.errors.any?
+      .task-error-explanation
+        h3
+          = task.errors.count
+          | 件のエラーがあります。
+        ul
+          - task.errors.full_messages.each do |msg|
+            li= msg
+    = form_for task, data: {remote:true} do |f|
       .task-form-content.clearfix
         h3 タイトル
         = f.text_field :title, class: "task-form-control"
