@@ -7,9 +7,9 @@ class TasksUsersController < ApplicationController
   end
 
   def destroy
-    taskUser = TasksUser.find(params[:id])
-    @task = taskUser.task
-    taskUser.destroy
+    task_user = TasksUser.find(params[:id])
+    @task = task_user.task
+    task_user.destroy
   end
 
   private
