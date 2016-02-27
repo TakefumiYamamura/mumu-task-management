@@ -4,7 +4,7 @@ function masonry_start(content, item){
     columnWidth : 260,
     isAnimated : true,
     animationOptions: {
-        duration: 600
+      duration: 600
     }
   });
 }
