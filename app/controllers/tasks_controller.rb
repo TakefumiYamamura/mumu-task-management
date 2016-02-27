@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_tasks, only: [:index, :create, :update]
   before_action :set_task, only: [:edit, :update]
+
   def index
   end
 
@@ -10,7 +11,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @flag = @task.save ? true : false
+    @flag = !!@task.save
   end
 
   def edit
@@ -32,5 +33,4 @@ class TasksController < ApplicationController
   def set_task
     @task = Task.find(params[:id])
   end
-
 end

@@ -21,5 +21,4 @@ class TasksUsersController < ApplicationController
   def set_tasks
     @tasks = Task.includes(:users).all
   end
-
 end
