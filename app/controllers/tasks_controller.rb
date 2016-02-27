@@ -11,7 +11,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @flag = !!@task.save
+    @error_message_flag = !!@task.save
   end
 
   def edit
