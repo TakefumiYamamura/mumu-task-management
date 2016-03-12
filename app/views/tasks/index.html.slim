@@ -12,5 +12,5 @@
       li#doing.tab-item.task-nav-item-button.selected 作業中
       li#todo.tab-item.task-nav-item-button ToDo
       li#done.tab-item.task-nav-item-button 完了
-.task-content-wrap
+.task-content-wrap#js-task-content-wrap
   = render partial: "tasks/task_content", locals: {tasks: @tasks}

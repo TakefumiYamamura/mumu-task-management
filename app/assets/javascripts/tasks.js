@@ -12,7 +12,7 @@ function masonry_start(content, item){
 function update_tasks(text){
   var showid = $(".task-content:visible").attr("id");
   $(".task-content").masonry('destroy');
-  $(".task-content-wrap").html(text);
+  $("#js-task-content-wrap").html(text);
   masonry_start(".task-content", ".list-card-container");
   $(".task-content").hide();
   $("." + showid).show();
@@ -40,7 +40,7 @@ $(window).on("load", function() {
   $("body").on("click", "#wrap.cover-view", function() {
     $(this).removeClass('cover-view');
     $(".edit-task-content").hide();
-    $(".new-task-content").hide();
+    $("#js-new-task-content").hide();
   });
 
   $("body").on("click", ".plus-image", function() {
