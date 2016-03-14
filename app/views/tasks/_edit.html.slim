@@ -14,7 +14,7 @@
           - else
             = image_tag "no_avatar.png", class: "member-avatar"
         = image_tag "plus.png", class: "member-avatar plus-image"
-        .member-content
+        .member-content#js-member-content
           - User.all.each do |user|
             - if task.users.include?(user)
               = link_to tasks_user_path(TasksUser.find_by(user_id: user, task_id: task), ), class: "member-link", method: :delete, remote: true do
