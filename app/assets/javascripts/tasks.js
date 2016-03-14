@@ -15,13 +15,13 @@ function update_tasks(text){
   $taskContent.masonry('destroy');
   $("#js-task-content-wrap").html(text);
   masonry_start(".task-content", ".list-card-container");
-  $taskContent.hide();
+  $(".task-content").hide();
   $("." + showid).show();
 }
 
 $(window).on("load", function() {
-  $taskContent = $(".task-content");
   $("li.task-nav-item-button").on("click", function() {
+    $taskContent = $(".task-content");
     $taskContent.masonry('destroy');
     $("li.task-nav-item-button.selected").removeClass("selected");
     $(this).addClass("selected");
@@ -41,8 +41,8 @@ $(window).on("load", function() {
 
   $("body").on("click", "#wrap.cover-view", function() {
     $(this).removeClass('cover-view');
-    $(".edit-task-content").hide();
-    $(".new-task-content").hide();
+    $(".edit-task-content").remove();
+    $(".new-task-content").remove();
   });
 
   $("body").on("click", ".plus-image", function() {
@@ -50,6 +50,7 @@ $(window).on("load", function() {
     $("#js-member-content").show();
   });
 
+  $taskContent = $(".task-content");
   masonry_start(".task-content", ".list-card-container");
   $taskContent.hide();
   $(".doing").show();

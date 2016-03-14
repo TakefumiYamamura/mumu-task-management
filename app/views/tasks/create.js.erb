@@ -1,6 +1,6 @@
 <% if @error_message_flag %>
   $("#wrap").removeClass('cover-view');
-  $("#js-new-task-content").hide()
+  $("#js-new-task-content").remove()
   update_tasks('<%= j(render partial: "tasks/task_content", locals: {tasks: @tasks} )%>')
 <% else %>
   $("#js-new-task-content").html("<%= j(render partial: 'tasks/new', locals: {task: @task}) %>")
