@@ -1,0 +1,52 @@
+.edit-task-content#js-edit-task-content
+  .standardForm
+    = form_for task, data: {remote:true} do |f|
+      .task-form-header.content-title
+        h2.edit-task#title.hide-title
+          = task.title
+        = f.text_field :title, class: "task-form-control task-form-title hidden-form"
+      .task-form-content.clearfix.content-members
+        h6.content-members
+          | members
+        - task.users.each do |user|
+          - if user.avatar.present?
+            = image_tag user.avatar, class: "member-avatar"
+          - else
+            = image_tag "no_avatar.png", class: "member-avatar"
+        = image_tag "plus.png", class: "member-avatar plus-image"
+        .member-content#js-member-content
+          - User.all.each do |user|
+            - if task.users.include?(user)
+              = link_to tasks_user_path(TasksUser.find_by(user_id: user, task_id: task), ), class: "member-link", method: :delete, remote: true do
+                - if user.avatar.present?
+                  = image_tag user.avatar, class: "member-avatar"
+                - else
+                  = image_tag "no_avatar.png", class: "member-avatar"
+                = image_tag "check.png", class: "check-img"
+            - else
+              = link_to tasks_users_path(user_id: user, task_id: task), class: "member-link", method: :post, remote: true do
+                - if user.avatar.present?
+                  = image_tag user.avatar, class: "member-avatar"
+                - else
+                  = image_tag "no_avatar.png", class: "member-avatar"
+
+      .task-form-content.clearfix.content-detail
+        h6.detail
+          |detail
+          span.edit-task#detail.hide-detail
+            |  Edit
+        h4.hide-detail
+          = task.detail
+        = f.text_area :detail, class: "task-form-control task-form-detail hidden-form"
+      .task-form-content.clearfix.content-deadline
+        h6.deadline
+          |Due Date
+        .edit-task#deadline.btn-danger.btn.hide-deadline
+          = task.deadline
+        = f.date_field :deadline, class: "task-form-control task-form-deadline hidden-form"
+      .task-form-content.clearfix.content-category
+        h6.category
+          |State
+        .edit-task#category.btn.hide-category.btn-primary
+          = task.category
+        = f.select :category, Task.categories.keys.to_a, {}, {class: "task-form-control task-form-category hidden-form"}

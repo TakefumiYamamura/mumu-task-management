@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'better_errors'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -45,3 +47,12 @@ group :development do
   gem 'spring'
 end
 
+gem 'slim-rails'
+gem 'carrierwave'
+gem 'devise'
+gem 'html2slim'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'jquery-turbolinks'
+gem 'dotenv-rails'
+gem 'ruby-trello'

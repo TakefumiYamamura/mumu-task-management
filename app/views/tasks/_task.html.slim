@@ -1,0 +1,14 @@
+= link_to (edit_task_path task), remote: true do
+  .list-card-container.btn-default.list-card-border
+    h5
+      = task.title
+    h6
+      = task.detail
+    - task.users.each do |user|
+      - if user.avatar.present?
+        = image_tag user.avatar, class: "member-avatar"
+      - else
+        = image_tag "no_avatar.png", class: "member-avatar"
+    .list-card-date
+      i.fa.fa-calendar-o.fa-fw
+      = task.deadline

@@ -1,0 +1,27 @@
+.new-task-content#js-new-task-content
+  .standardForm
+    .task-form-header
+      h2 新規タスクを作成
+    - if task.errors.any?
+      .task-error-explanation
+        h3
+          = task.errors.count
+          | 件のエラーがあります。
+        ul
+          - task.errors.full_messages.each do |msg|
+            li= msg
+    = form_for task, data: {remote:true} do |f|
+      .task-form-content.clearfix
+        h3 タイトル
+        = f.text_field :title, class: "task-form-control"
+      .task-form-content.clearfix
+        h3 詳細説明
+        = f.text_area :detail, class: "task-form-control"
+      .task-form-content.clearfix
+        h3 期日
+        = f.date_field :deadline, class: "task-form-control"
+      .task-form-content.clearfix
+        h3 カテゴリ
+        = f.select :category, Task.categories.keys.to_a, class: "task-form-control"
+      .task-form-content.clearfix
+        = f.submit "作成", class: "btn btn-primary pull-left new-task-button"
