@@ -1,5 +1,6 @@
 class TasksUsersController < ApplicationController
   before_action :set_tasks, only: [:create, :destroy]
+  before_action :authenticate_user!
 
   def create
     @task = Task.find(params[:task_id])

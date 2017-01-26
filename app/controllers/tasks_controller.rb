@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
   before_action :set_tasks, only: [:index, :create, :update]
   before_action :set_task, only: [:edit, :update]
+  before_action :authenticate_user!
 
   def index
+    @cur_task = current_user.tasks.todo.first if(user_signed_in?)
   end
 
   def new
