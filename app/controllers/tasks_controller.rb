@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @cur_task = current_user.tasks.todo.first if(user_signed_in?)
+    @cur_task = current_user.tasks.doing.first if(user_signed_in?)
   end
 
   def new

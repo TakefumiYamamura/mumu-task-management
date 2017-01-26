@@ -1,11 +1,22 @@
 .task-pane-header
   .task-header
-    h3 現在あなたの抱えているタスク
-    .card-container.list-card-border
-      h5 Tech::Chatでmarkdownの記法を用いてコードをかけるようにする
-      .list-card-date
-        i.fa.fa-calendar-o.fa-fw
-        | 2016-02-04
+    - if user_signed_in? && @cur_task != nil
+      h3 現在あなたの抱えているタスク
+      .card-container.list-card-border
+        h5 
+          = @cur_task.title
+        h6 
+          = @cur_task.detail
+        .list-card-date
+          i.fa.fa-calendar-o.fa-fw
+          = @cur_task.deadline
+    - else
+      h3 現在あなたの抱えているタスク
+      .card-container.list-card-border
+        h5 特になし
+        .list-card-date
+          i.fa.fa-calendar-o.fa-fw
+          | 
 
   .nav
     ul.task-nav-item
